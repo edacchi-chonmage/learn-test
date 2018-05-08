@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public count = 0;
+
+  public increment(count: number, incrementStep: number): void {
+    this.count = count + incrementStep;
+  }
 }
