@@ -1,18 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './components/button/button.component';
+import { RepositoriesComponent } from './components/repositories/repositories.component';
+import { RepositoryComponent } from './components/repository/repository.component';
+import { RepositoriesStateService } from "./states/repositories-state.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent
+    RepositoriesComponent,
+    RepositoryComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    RepositoriesStateService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
-export class AppModule { }
+export class AppModule {
+}

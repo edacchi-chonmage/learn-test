@@ -1,6 +1,5 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from "./components/button/button.component";
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -9,8 +8,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        ButtonComponent
+        AppComponent
       ],
     }).compileComponents();
   }));
@@ -27,12 +25,6 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it('should increment', () => {
-    component.increment(component.count, 1);
-    expect(component.count).toEqual(1);
-    component.increment(component.count, 10);
-    expect(component.count).toEqual(11);
-  });
   // it(`should have as title 'app'`, async(() => {
   //   const fixture = TestBed.createComponent(AppComponent);
   //   const app = fixture.debugElement.componentInstance;

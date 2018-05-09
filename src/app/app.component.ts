@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IRepository, RepositoriesStateService } from "./states/repositories-state.service";
+import { Observable } from "rxjs/index";
 
 @Component({
   selector: 'app-root',
@@ -6,9 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public count = 0;
+  public repositories$: Observable<IRepository[]>;
 
-  public increment(count: number, incrementStep: number): void {
-    this.count = count + incrementStep;
+  constructor(repositoriesState: RepositoriesStateService) {
+    this.repositories$ = repositoriesState.$;
+    repositoriesState.fetch('thrbrd');
   }
 }

@@ -1,0 +1,6 @@
+<ng-container [formGroup]="form">
+  <input type="text" formControlName="filterText" placeholder="絞り込み">
+  <ng-container *ngFor="let repository of filterByText(repositories, form.value.filterText)">
+    <app-repository [repository]="repository"></app-repository>
+  </ng-container>
+</ng-container>
